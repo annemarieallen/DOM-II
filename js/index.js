@@ -21,15 +21,16 @@ document.addEventListener("keydown", (e) => {
   }
 });
 
-// 3) button alert for 'Fun in the Sun' upon click
+// 3) button alert for 'Fun in the Sun' upon dblclick
 
 const noFunInSun = document.querySelector(".btn");
 
-noFunInSun.addEventListener("click", (event) => {
+noFunInSun.addEventListener("dblclick", (event) => {
   alert(
-    `This trip actually isn't fun, I would not recommend to "${event.target.textContent}`
+    `This trip actually isn't fun, I would recommend "${event.target.textContent}`
   );
 });
+
 
 // 4) rotate desination.jpg 180 degrees upon click
 
@@ -73,13 +74,26 @@ body.addEventListener("dblclick", (event)=>{
 // 7) drag // load 
 
 window.addEventListener('load', (event) => {
-    console.log('this page is fully loaded :)');
+    // console.log('this page is fully loaded :)');
   });
 
-// const welcome = document.querySelector(".intro h2");
-// console.log(welcome);
 
-// welcome.addEventListener("drag", (event)=>{
-//     welcome.style = "color: purple";
-// });
+// 8) focus on Home anchor to turn pink 
 
+const homeAnchor = document.querySelector('.nav-link')
+
+homeAnchor.addEventListener('focus', (event)=>{
+  event.target.style.background = 'pink';
+})
+
+// 9) resize window 
+
+window.addEventListener('resize', (event)=>{
+  // console.log('window was resized!')
+})
+
+// 10) change inner text of button upon click 
+
+noFunInSun.addEventListener("click", (event)=>{
+  noFunInSun.innerText = "do not do it!"
+})
